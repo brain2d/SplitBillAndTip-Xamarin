@@ -10,7 +10,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>SplitBillAndTip.Droid</RootNamespace>
-    <AssemblyName>SplitBillAndTip.Android</AssemblyName>
+    <AssemblyName>Split Bill And Tip</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <AndroidApplication>true</AndroidApplication>
     <AndroidResgenFile>Resources\Resource.Designer.cs</AndroidResgenFile>

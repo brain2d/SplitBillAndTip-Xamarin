@@ -26,4 +26,9 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="$(MSBuildThisFileDirectory)images\icon.png" />
+    <Content Include="$(MSBuildThisFileDirectory)images\star_empty.png" />
+    <Content Include="$(MSBuildThisFileDirectory)images\star_full.png" />
+  </ItemGroup>
 </Project>
