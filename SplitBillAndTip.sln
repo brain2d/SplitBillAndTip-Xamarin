@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SplitBillAndTip.Android", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SplitBillAndTip.iOS", "SplitBillAndTip\SplitBillAndTip.iOS\SplitBillAndTip.iOS.csproj", "{E0990BDA-FA11-451A-90DB-7154DF0C39DF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SplitBillAndTip.UWP", "SplitBillAndTip.UWP\SplitBillAndTip.UWP.csproj", "{6E632C71-768A-4246-ABA6-C25B72D15AE6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SplitBillAndTip.UWP", "SplitBillAndTip\SplitBillAndTip.UWP\SplitBillAndTip.UWP.csproj", "{6E632C71-768A-4246-ABA6-C25B72D15AE6}"
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution

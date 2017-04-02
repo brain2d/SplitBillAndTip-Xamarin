@@ -1,18 +1,68 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:SplitBillAndTip"
-             x:Class="SplitBillAndTip.MainPage">
-    <StackLayout BackgroundColor="Blue">
-        <Label Text="Welcome to Xamarin Forms! Bitches!"
-           VerticalOptions="Center" 
+             x:Class="SplitBillAndTip.MainPage"
+             BackgroundColor="Accent" >
+    <StackLayout 
+        BackgroundColor="Accent" 
+        VerticalOptions="Center"
+        Padding="30" 
+        Spacing="10">
+        
+        <Label Text="Split Bill And Tip"
+           VerticalTextAlignment="Center"
+           HorizontalOptions="Center"
+               TextColor="Olive"
+               FontSize="24"/>
+        <Label Text="Number of persons: "
+           VerticalTextAlignment="Center"
+           HorizontalOptions="Start"
+           FontSize="20"/>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100*" />
+                <ColumnDefinition Width="100*" />
+                <ColumnDefinition Width="100*" />
+                <ColumnDefinition Width="100*" />
+                <ColumnDefinition Width="100*" />
+            </Grid.ColumnDefinitions>
+            <Button x:Name="button1" Text="1" Grid.Column="0" Clicked="Persons_Clicked" HorizontalOptions="Center" BackgroundColor="White"    />
+            <Button x:Name="button2" Text="2" Grid.Column="1" Clicked="Persons_Clicked" HorizontalOptions="Center" BackgroundColor="White"  />
+            <Button x:Name="button3" Text="3" Grid.Column="2" Clicked="Persons_Clicked" HorizontalOptions="Center" BackgroundColor="White"    />
+            <Button x:Name="button4" Text="4" Grid.Column="3" Clicked="Persons_Clicked" HorizontalOptions="Center" BackgroundColor="White"    />
+            <Button x:Name="button5" Text="5" Grid.Column="4" Clicked="Persons_Clicked" HorizontalOptions="Center" BackgroundColor="White"    />
+        </Grid>
+        <!-- 
+        <Label Text="Persons: "
+           VerticalTextAlignment="Center"
            HorizontalOptions="Center" />
-        <Entry x:Name="Enter_name_input"/>
-        <Label x:Name="Output_label"/>
-        <Button Text="Say Hello" Clicked="Button_Clicked"></Button>
+        <Entry x:Name="PersonsInput" Text="2"/>
+        -->
+        <Label Text="Tip amount: "
+           VerticalTextAlignment="Center"
+           HorizontalOptions="Center" />
+        <Entry x:Name="TipInput"/>
+
+        <Label Text="Check amount: "
+           VerticalTextAlignment="Center"
+           HorizontalOptions="Center" />
+        <Entry x:Name="CheckInput"/>
+
+        <Button 
+            Text="Calculate!"
+            Clicked="Button_Clicked"/>
+
+        <Label Text="Total To Pay:"/>
+        <Label x:Name="TotalToPayLabel"/>
+        <Label Text="Total Tip:"/>
+        <Label x:Name="TotalTipLabel"/>
+        <Label Text="Total Per Person:"/>
+        <Label x:Name="TotalPerPersonLabel"/>
+        <Label Text="Tip Per Person:"/>
+        <Label x:Name="TipPerPersonLabel"/>
     </StackLayout>
 
-    
-     
-
-</ContentPage>
+</ContentPage> 
