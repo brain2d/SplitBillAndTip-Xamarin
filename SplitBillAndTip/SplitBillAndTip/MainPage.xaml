@@ -3,9 +3,16 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:SplitBillAndTip"
              x:Class="SplitBillAndTip.MainPage">
-
-	<Label Text="Welcome to Xamarin Forms!" 
+    <StackLayout BackgroundColor="Blue">
+        <Label Text="Welcome to Xamarin Forms! Bitches!"
            VerticalOptions="Center" 
            HorizontalOptions="Center" />
+        <Entry x:Name="Enter_name_input"/>
+        <Label x:Name="Output_label"/>
+        <Button Text="Say Hello" Clicked="Button_Clicked"></Button>
+    </StackLayout>
+
+    
+     
 
 </ContentPage>
