@@ -85,7 +85,7 @@ namespace SplitBillAndTip
             {
                 case 5:
                 {
-                    TipsOutput.Text = TipPersent + "% Tip: Servise Was Not Very Good";
+                    TipsOutput.Text = TipPersent + "% Tip: Servise Was Rather Weak";
                     star2.Image = "images/star_empty.png";
                     star3.Image = "images/star_empty.png";
                     star4.Image = "images/star_empty.png";
@@ -137,8 +137,9 @@ namespace SplitBillAndTip
             double number;
             if (Double.TryParse(CheckInput.Text, out number))
             {
-                CheckAmount = Double.Parse(CheckInput.Text);
+                CheckAmount = Double.Parse(CheckInput.Text.Replace(",", "."));
                 //calculate values for output:
+                //CheckInput.Text.Replace(",", ".");
                 TotalToPay = CheckAmount + CheckAmount * (TipPersent / 100);
                 TotalTip = CheckAmount * (TipPersent / 100);
                 TotalPerPerson = TotalToPay / Persons;

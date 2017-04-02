@@ -64,9 +64,10 @@
                 <RowDefinition Height="50" />
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="100*" />
-                <ColumnDefinition Width="300*" />
+                <ColumnDefinition Width="200*" />
+                <ColumnDefinition Width="200*" />
                 <ColumnDefinition Width="40*" />
+                <ColumnDefinition Width="200*" />
             </Grid.ColumnDefinitions>
             <Label 
                 Grid.Column="0"
