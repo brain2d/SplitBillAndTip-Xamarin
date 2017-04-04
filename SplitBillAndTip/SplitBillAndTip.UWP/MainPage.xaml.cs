@@ -18,13 +18,14 @@ using Windows.UI.Xaml.Navigation;
 namespace SplitBillAndTip.UWP
 {
     /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
+    /// An empty page that can be used on its own or navigated to within a Frame.dsfsfs NavigationPage.SetHasNavigationBar(this, false);
     /// </summary>
     public sealed partial class MainPage
     {
         public MainPage()
         {
             this.InitializeComponent();
+
             LoadApplication(new SplitBillAndTip.App());
         }
     }

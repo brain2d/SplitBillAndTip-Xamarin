@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" IgnorableNamespaces="uap mp">
-  <Identity Name="edf2f4e3-6a77-42cd-8be3-6a802e2e3aa3" Publisher="CN=smutk" Version="1.0.0.0" />
-  <mp:PhoneIdentity PhoneProductId="edf2f4e3-6a77-42cd-8be3-6a802e2e3aa3" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
+  <Identity Name="48045EgorSmutkin.SplitTipAndBill" Publisher="CN=A1E6678C-FDE1-4B4F-9F06-0E9563673823" Version="1.1.2.0" />
+  <mp:PhoneIdentity PhoneProductId="914808dc-cd79-46e8-80c0-ad3131557ac1" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
-    <DisplayName>SplitBillAndTip.UWP</DisplayName>
-    <PublisherDisplayName>smutk</PublisherDisplayName>
+    <DisplayName>Split Tip And Bill</DisplayName>
+    <PublisherDisplayName>Egor Smutkin</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
   <Dependencies>
@@ -15,8 +15,13 @@
   </Resources>
   <Applications>
     <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="SplitBillAndTip.UWP.App">
-      <uap:VisualElements DisplayName="SplitBillAndTip.UWP" Square150x150Logo="Assets\Square150x150Logo.png" Square44x44Logo="Assets\Square44x44Logo.png" Description="SplitBillAndTip.UWP" BackgroundColor="transparent">
-        <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png" Square310x310Logo="Assets\LargeTile.png" Square71x71Logo="Assets\SmallTile.png">
+      <uap:VisualElements DisplayName="Split Bill And Tip" Square150x150Logo="Assets\Square150x150Logo.png" Square44x44Logo="Assets\Square44x44Logo.png" Description="This aappliccation helps you to calculate tip and split the bill with others! Free!" BackgroundColor="transparent">
+        <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png" Square310x310Logo="Assets\LargeTile.png" Square71x71Logo="Assets\SmallTile.png" ShortName="Split Bill And Tip">
+          <uap:ShowNameOnTiles>
+            <uap:ShowOn Tile="square150x150Logo" />
+            <uap:ShowOn Tile="wide310x150Logo" />
+            <uap:ShowOn Tile="square310x310Logo" />
+          </uap:ShowNameOnTiles>
         </uap:DefaultTile>
         <uap:SplashScreen Image="Assets\SplashScreen.png" />
       </uap:VisualElements>

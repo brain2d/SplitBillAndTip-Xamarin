@@ -12,6 +12,7 @@ namespace SplitBillAndTip
     {
         public MainPage()
         {
+            NavigationPage.SetHasNavigationBar(this, false);
             InitializeComponent();
             currency.Text = System.Globalization.RegionInfo.CurrentRegion.CurrencySymbol;
         }
