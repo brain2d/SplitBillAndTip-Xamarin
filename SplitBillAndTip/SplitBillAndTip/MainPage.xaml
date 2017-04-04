@@ -1,136 +1,174 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="SplitBillAndTip.MainPage"
-             BackgroundColor="White" >
-    <StackLayout
-        Padding="20" 
-        Spacing="30">
-        <!-- Header -->
-        <Label 
-           Text="Split Bill And Tip"
-           VerticalTextAlignment="Center"
-           HorizontalOptions="Center"
-           FontSize="24"/>
-        <!-- People -->
-        <Label 
-           Text="3 People Split Bill"
-           x:Name="PersonsOutput"
-           VerticalTextAlignment="Center"
-           HorizontalOptions="Start"/>
-        <!-- People buttons -->
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="50" />
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-            </Grid.ColumnDefinitions>
-            <Button x:Name="button1" WidthRequest = "60" Text="1" Grid.Column="0" Clicked="Persons_Clicked" HorizontalOptions="Center"  BackgroundColor="White"/>
-            <Button x:Name="button2" WidthRequest = "60" Text="2" Grid.Column="1" Clicked="Persons_Clicked" HorizontalOptions="Center"  BackgroundColor="White"/>
-            <Button x:Name="button3" WidthRequest = "60" Text="3" Grid.Column="2" Clicked="Persons_Clicked" HorizontalOptions="Center"  BackgroundColor="Yellow"/>
-            <Button x:Name="button4" WidthRequest = "60" Text="4" Grid.Column="3" Clicked="Persons_Clicked" HorizontalOptions="Center"  BackgroundColor="White"/>
-            <Button x:Name="button5"  WidthRequest = "60" Text="5" Grid.Column="4" Clicked="Persons_Clicked" HorizontalOptions="Center"  BackgroundColor="White"/>
-        </Grid>
-        <Label
-           Text="15% Tips: Servise Was Very Good!"
-           x:Name="TipsOutput"
-           VerticalTextAlignment="Center"
-           HorizontalOptions="Start" />
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="60"/>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-            </Grid.ColumnDefinitions>
-            <Button x:Name="star1" ClassId ="5"  TextColor="Transparent" Grid.Column="0" Clicked="Star_Clicked" HorizontalOptions="Center" Image="images/star_full.png"/>
-            <Button x:Name="star2" ClassId="10" TextColor="Transparent" Grid.Column="1" Clicked="Star_Clicked" HorizontalOptions="Center" Image="images/star_full.png"/>
-            <Button x:Name="star3" ClassId="15" TextColor="Transparent" Grid.Column="2" Clicked="Star_Clicked" HorizontalOptions="Center" Image="images/star_full.png"/>
-            <Button x:Name="star4" ClassId="20" TextColor="Transparent" Grid.Column="3" Clicked="Star_Clicked" HorizontalOptions="Center" Image="images/star_empty.png"/>
-            <Button x:Name="star5" ClassId="25" TextColor="Transparent" Grid.Column="4" Clicked="Star_Clicked" HorizontalOptions="Center" Image="images/star_empty.png"/>
-        </Grid>
-
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="50" />
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="200*" />
-                <ColumnDefinition Width="200*" />
-                <ColumnDefinition Width="40*" />
-                <ColumnDefinition Width="200*" />
-            </Grid.ColumnDefinitions>
+             xmlns:media="clr-namespace:Windows.UI.Xaml.Media;assembly=Windows.Foundation.UniversalApiContract"
+             x:Class="SplitBillAndTip.MainPage">
+    <ScrollView>
+        <StackLayout
+            Padding="10" 
+            Spacing="10">
+            <StackLayout.BackgroundColor>
+                <OnPlatform x:TypeArguments="Color"
+                    Android="#ffe7d8"
+                    WinPhone="#ffe7d8"
+                    iOS="#ffe7d8">
+                </OnPlatform>
+            </StackLayout.BackgroundColor>
+            <!-- Header  -->
             <Label 
+               Text="Split Bill And Tip"
+               FontAttributes="Bold"
+               VerticalTextAlignment="Center"
+               HorizontalOptions="Center"
+               FontSize="24"/>
+            <!-- People -->
+            <Label 
+               Text="3 People Split Bill"
+               x:Name="PersonsOutput"
+               VerticalTextAlignment="Center"
+               HorizontalOptions="Start"/>
+            <!-- People buttons -->
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Button x:Name="button1" WidthRequest = "60" Text="1" Grid.Column="0" Clicked="Persons_Clicked" HorizontalOptions="Center"  BackgroundColor="White"/>
+                <Button x:Name="button2" WidthRequest = "60" Text="2" Grid.Column="1" Clicked="Persons_Clicked" HorizontalOptions="Center"  BackgroundColor="White"/>
+                <Button x:Name="button3" WidthRequest = "60" Text="3" Grid.Column="2" Clicked="Persons_Clicked" HorizontalOptions="Center"  BackgroundColor="Yellow"/>
+                <Button x:Name="button4" WidthRequest = "60" Text="4" Grid.Column="3" Clicked="Persons_Clicked" HorizontalOptions="Center"  BackgroundColor="White"/>
+                <Button x:Name="button5"  WidthRequest = "60" Text="5" Grid.Column="4" Clicked="Persons_Clicked" HorizontalOptions="Center"  BackgroundColor="White"/>
+            </Grid>
+            <!-- Service label -->
+            <Label
+               Text="15% Tips: Service Was Very Good!"
+               x:Name="TipsOutput"
+               VerticalTextAlignment="Center"
+               HorizontalOptions="Start" />
+            <!-- Service stars -->
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="60"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="star1" ClassId ="5"  TextColor="Transparent" Grid.Column="0" Clicked="Star_Clicked" HorizontalOptions="Center" Image="images/star_full.png"/>
+                    <Button x:Name="star2" ClassId="10" TextColor="Transparent" Grid.Column="1" Clicked="Star_Clicked" HorizontalOptions="Center" Image="images/star_full.png"/>
+                    <Button x:Name="star3" ClassId="15" TextColor="Transparent" Grid.Column="2" Clicked="Star_Clicked" HorizontalOptions="Center" Image="images/star_full.png"/>
+                    <Button x:Name="star4" ClassId="20" TextColor="Transparent" Grid.Column="3" Clicked="Star_Clicked" HorizontalOptions="Center" Image="images/star_empty.png"/>
+                    <Button x:Name="star5" ClassId="25" TextColor="Transparent" Grid.Column="4" Clicked="Star_Clicked" HorizontalOptions="Center" Image="images/star_empty.png"/>
+                </Grid>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="200*" />
+                    <ColumnDefinition Width="200*" />
+                    <ColumnDefinition Width="40*" />
+                    <ColumnDefinition Width="200*" />
+                </Grid.ColumnDefinitions>
+                <Label 
                 Grid.Column="0"
                 Text="Check amount: "
                 VerticalTextAlignment="Center"
                 HorizontalOptions="Center" />
-            <Entry 
+                <Entry 
                 TextChanged="Button_Clicked"
                 Grid.Column="1"
                 VerticalOptions="Center"
                 Keyboard="Numeric"
                 x:Name="CheckInput"/>
-            <Label 
+                <Label 
                 x:Name="currency"
-               Grid.Column="2"
-               Text=""
-               VerticalTextAlignment="Center" />
-        </Grid>
-        <Grid BackgroundColor="Yellow" Padding="10">
+                Grid.Column="2"
+                VerticalTextAlignment="Center" />
+            </Grid>
+            <!-- Output check (pergament paper) -->
+            <Grid  Padding="5" >
             <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="60*" />
                 <ColumnDefinition Width="40*" />
             </Grid.ColumnDefinitions>
-            <Label 
+                <!--(pergament paper) -->
+                <Image
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    Grid.RowSpan="4"
+                    Source="images/check_bg.png" 
+                    AbsoluteLayout.LayoutBounds="0,0,1,1"  
+                    AbsoluteLayout.LayoutFlags="All"
+                    HorizontalOptions="Fill"
+                    VerticalOptions="Fill"
+                    Aspect="Fill">
+                </Image>
+                <Label 
+                HorizontalTextAlignment="Center"
                 Grid.Row="0"
+                Margin="30, 50, 0, 0"
                 Grid.Column="0"
                 Text="Total To Pay:"/>
-            <Label 
+                <Label 
+                HorizontalTextAlignment="Center"
                 Grid.Row="0"
+                Margin="0, 50, 50, 0"
                 Grid.Column="1"
                 x:Name="TotalToPayLabel"/>
-            <Label 
+                <Label 
+                HorizontalTextAlignment="Center"
                 Grid.Row="1"
+                Margin="30, 0, 0, 0"
                 Grid.Column="0"
                 Text="Total Tip:"/>
-            <Label 
+                <Label 
+                HorizontalTextAlignment="Center"
                 Grid.Row="1"
+                Margin="0, 0, 50, 0"
                 Grid.Column="1"
                 x:Name="TotalTipLabel"/>
-            <Label 
+                <Label 
+                HorizontalTextAlignment="Center"
                 Grid.Row="2"
+                Margin="30, 0, 0, 0"
                 Grid.Column="0"
                 Text="Total Per Person:"/>
-            <Label 
+                <Label 
+                HorizontalTextAlignment="Center"
+                Margin="0, 0, 50, 0"
                 Grid.Row="2"
                 Grid.Column="1"
                 x:Name="TotalPerPersonLabel"/>
-            <Label 
+                <Label 
+                HorizontalTextAlignment="Center"
                 Grid.Row="3"
+                Margin="30, 0, 0, 40"
                 Grid.Column="0"
                 Text="Tip Per Person:"/>
-            <Label 
+                <Label 
+                HorizontalTextAlignment="Center"
                 Grid.Row="3"
+                Margin="0, 0, 50, 40"
                 Grid.Column="1"
                 x:Name="TipPerPersonLabel"/>
         </Grid>
-
     </StackLayout>
-
+    </ScrollView>
 </ContentPage> 

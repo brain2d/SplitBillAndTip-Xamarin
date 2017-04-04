@@ -28,7 +28,7 @@ namespace SplitBillAndTip
             Button clickedButton = (Button) sender;
             clickedButton.BackgroundColor = Color.Yellow;
             Persons = Double.Parse(clickedButton.Text);
-            //set Servise was not very good: "+ TipPersent + "% tips";
+            //set Service was not very good: "+ TipPersent + "% tips";
             PersonsOutput.Text = Persons + " People Split Bill";
             switch (clickedButton.Text) //set inactive color to other buttons
             {
@@ -85,7 +85,7 @@ namespace SplitBillAndTip
             {
                 case 5:
                 {
-                    TipsOutput.Text = TipPersent + "% Tip: Servise Was Rather Weak";
+                    TipsOutput.Text = TipPersent + "% Tip: Service Was Rather Weak";
                     star2.Image = "images/star_empty.png";
                     star3.Image = "images/star_empty.png";
                     star4.Image = "images/star_empty.png";
@@ -94,7 +94,7 @@ namespace SplitBillAndTip
                 }
                 case 10:
                 {
-                    TipsOutput.Text = TipPersent + "% Tip: Servise Was Was Ok";
+                    TipsOutput.Text = TipPersent + "% Tip: Service Was Was Ok";
                     star1.Image = "images/star_full.png";
                     star3.Image = "images/star_empty.png";
                     star4.Image = "images/star_empty.png";
@@ -103,7 +103,7 @@ namespace SplitBillAndTip
                 }
                 case 15:
                 {
-                    TipsOutput.Text = TipPersent + "% Tip: Servise Was Good!";
+                    TipsOutput.Text = TipPersent + "% Tip: Service Was Good!";
                     star1.Image = "images/star_full.png";
                     star2.Image = "images/star_full.png";
                     star4.Image = "images/star_empty.png";
@@ -112,7 +112,7 @@ namespace SplitBillAndTip
                 }
                 case 20:
                 {
-                    TipsOutput.Text = TipPersent + "% Tip: Servise Was Very Good!";
+                    TipsOutput.Text = TipPersent + "% Tip: Service Was Very Good!";
                     star1.Image = "images/star_full.png";
                     star2.Image = "images/star_full.png";
                     star3.Image = "images/star_full.png";
@@ -121,7 +121,7 @@ namespace SplitBillAndTip
                 }
                 case 25:
                 {
-                    TipsOutput.Text = TipPersent + "% Tip: Servise Was Excellent!";
+                    TipsOutput.Text = TipPersent + "% Tip: Service Was Excellent!";
                     star1.Image = "images/star_full.png";
                     star2.Image = "images/star_full.png";
                     star3.Image = "images/star_full.png";
@@ -151,5 +151,7 @@ namespace SplitBillAndTip
                 TipPerPersonLabel.Text = TipPerPerson.ToString("C");
             }
         }
+
+
     }
 }
