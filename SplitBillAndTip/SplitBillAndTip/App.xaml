@@ -4,7 +4,19 @@
              x:Class="SplitBillAndTip.App">
 	<Application.Resources>
 
-		<!-- Application resource dictionary --> 
-
-	</Application.Resources>
+		<!-- Application resource dictionary -->
+        <ResourceDictionary>
+            <Color x:Key="backgroundColor">#ffe7d8</Color>
+            <Color x:Key="textColor">White</Color>
+            <Style x:Key="PeopleButtonNotPressed" TargetType="Button">
+                <Setter Property="WidthRequest" Value= "60"/>
+                <Setter Property="BackgroundColor" Value= "White"/>
+            </Style>
+            <Style x:Key="PeopleButtonPressed" TargetType="Button">
+                <Setter Property="WidthRequest" Value= "60"/>
+                <Setter Property="BackgroundColor" Value= "#f5ed69"/>
+            </Style>
+        </ResourceDictionary>
+        
+    </Application.Resources>
 </Application>

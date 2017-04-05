@@ -2,18 +2,13 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:media="clr-namespace:Windows.UI.Xaml.Media;assembly=Windows.Foundation.UniversalApiContract"
-             x:Class="SplitBillAndTip.MainPage">
+             x:Class="SplitBillAndTip.MainPage"
+             BackgroundColor = "{StaticResource backgroundColor}">
     <ScrollView>
         <StackLayout
             Padding="10" 
             Spacing="10">
-            <StackLayout.BackgroundColor>
-                <OnPlatform x:TypeArguments="Color"
-                    Android="#ffe7d8"
-                    WinPhone="#ffe7d8"
-                    iOS="#ffe7d8">
-                </OnPlatform>
-            </StackLayout.BackgroundColor>
+
             <!-- Header  -->
             <Label 
                Text="Split Bill And Tip"
@@ -39,11 +34,11 @@
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <Button x:Name="button1" WidthRequest = "60" Text="1" Grid.Column="0" Clicked="Persons_Clicked" HorizontalOptions="Center"  BackgroundColor="White"/>
-                <Button x:Name="button2" WidthRequest = "60" Text="2" Grid.Column="1" Clicked="Persons_Clicked" HorizontalOptions="Center"  BackgroundColor="White"/>
-                <Button x:Name="button3" WidthRequest = "60" Text="3" Grid.Column="2" Clicked="Persons_Clicked" HorizontalOptions="Center"  BackgroundColor="Yellow"/>
-                <Button x:Name="button4" WidthRequest = "60" Text="4" Grid.Column="3" Clicked="Persons_Clicked" HorizontalOptions="Center"  BackgroundColor="White"/>
-                <Button x:Name="button5"  WidthRequest = "60" Text="5" Grid.Column="4" Clicked="Persons_Clicked" HorizontalOptions="Center"  BackgroundColor="White"/>
+                <Button x:Name="button1" Text="1" Grid.Column="0" Clicked="Persons_Clicked" Style="{DynamicResource PeopleButtonNotPressed}" />
+                <Button x:Name="button2" Text="2" Grid.Column="1" Clicked="Persons_Clicked" Style="{DynamicResource PeopleButtonNotPressed}" />
+                <Button x:Name="button3" Text="3" Grid.Column="2" Clicked="Persons_Clicked" Style="{DynamicResource PeopleButtonPressed}" />
+                <Button x:Name="button4" Text="4" Grid.Column="3" Clicked="Persons_Clicked" Style="{DynamicResource PeopleButtonNotPressed}" />
+                <Button x:Name="button5" Text="5" Grid.Column="4" Clicked="Persons_Clicked" Style="{DynamicResource PeopleButtonNotPressed}" />
             </Grid>
             <!-- Service label -->
             <Label
@@ -63,20 +58,20 @@
                         <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
-                    <Button x:Name="star1" ClassId ="5"  TextColor="Transparent" Grid.Column="0" Clicked="Star_Clicked" HorizontalOptions="Center" Image="images/star_full.png"/>
-                    <Button x:Name="star2" ClassId="10" TextColor="Transparent" Grid.Column="1" Clicked="Star_Clicked" HorizontalOptions="Center" Image="images/star_full.png"/>
-                    <Button x:Name="star3" ClassId="15" TextColor="Transparent" Grid.Column="2" Clicked="Star_Clicked" HorizontalOptions="Center" Image="images/star_full.png"/>
-                    <Button x:Name="star4" ClassId="20" TextColor="Transparent" Grid.Column="3" Clicked="Star_Clicked" HorizontalOptions="Center" Image="images/star_empty.png"/>
-                    <Button x:Name="star5" ClassId="25" TextColor="Transparent" Grid.Column="4" Clicked="Star_Clicked" HorizontalOptions="Center" Image="images/star_empty.png"/>
+                    <Button x:Name="star1" ClassId ="5"  Grid.Column="0" Clicked="Star_Clicked" HorizontalOptions="Center" Image="images/star_full.png"/>
+                    <Button x:Name="star2" ClassId="10"  Grid.Column="1" Clicked="Star_Clicked" HorizontalOptions="Center" Image="images/star_full.png"/>
+                    <Button x:Name="star3" ClassId="15"  Grid.Column="2" Clicked="Star_Clicked" HorizontalOptions="Center" Image="images/star_full.png"/>
+                    <Button x:Name="star4" ClassId="20"  Grid.Column="3" Clicked="Star_Clicked" HorizontalOptions="Center" Image="images/star_empty.png"/>
+                    <Button x:Name="star5" ClassId="25"  Grid.Column="4" Clicked="Star_Clicked" HorizontalOptions="Center" Image="images/star_empty.png"/>
                 </Grid>
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="50" />
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="260*" />
                     <ColumnDefinition Width="200*" />
-                    <ColumnDefinition Width="200*" />
-                    <ColumnDefinition Width="40*" />
+                    <ColumnDefinition Width="80*" />
                     <ColumnDefinition Width="200*" />
                 </Grid.ColumnDefinitions>
                 <Label 
@@ -104,71 +99,71 @@
                     <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="60*" />
-                <ColumnDefinition Width="40*" />
+                <ColumnDefinition Width="50*" />
+                <ColumnDefinition Width="50*" />
             </Grid.ColumnDefinitions>
-                <!--(pergament paper) -->
-                <Image
-                    Grid.Row="0"
-                    Grid.Column="0"
-                    Grid.ColumnSpan="2"
-                    Grid.RowSpan="4"
-                    Source="images/check_bg.png" 
-                    AbsoluteLayout.LayoutBounds="0,0,1,1"  
-                    AbsoluteLayout.LayoutFlags="All"
-                    HorizontalOptions="Fill"
-                    VerticalOptions="Fill"
-                    Aspect="Fill">
-                </Image>
-                <Label 
-                HorizontalTextAlignment="Center"
+            <!--(pergament paper) -->
+            <Image
                 Grid.Row="0"
-                Margin="30, 50, 0, 0"
                 Grid.Column="0"
-                Text="Total To Pay:"/>
-                <Label 
-                HorizontalTextAlignment="Center"
-                Grid.Row="0"
-                Margin="0, 50, 50, 0"
-                Grid.Column="1"
-                x:Name="TotalToPayLabel"/>
-                <Label 
-                HorizontalTextAlignment="Center"
-                Grid.Row="1"
-                Margin="30, 0, 0, 0"
-                Grid.Column="0"
-                Text="Total Tip:"/>
-                <Label 
-                HorizontalTextAlignment="Center"
-                Grid.Row="1"
-                Margin="0, 0, 50, 0"
-                Grid.Column="1"
-                x:Name="TotalTipLabel"/>
-                <Label 
-                HorizontalTextAlignment="Center"
-                Grid.Row="2"
-                Margin="30, 0, 0, 0"
-                Grid.Column="0"
-                Text="Total Per Person:"/>
-                <Label 
-                HorizontalTextAlignment="Center"
-                Margin="0, 0, 50, 0"
-                Grid.Row="2"
-                Grid.Column="1"
-                x:Name="TotalPerPersonLabel"/>
-                <Label 
-                HorizontalTextAlignment="Center"
-                Grid.Row="3"
-                Margin="30, 0, 0, 40"
-                Grid.Column="0"
-                Text="Tip Per Person:"/>
-                <Label 
-                HorizontalTextAlignment="Center"
-                Grid.Row="3"
-                Margin="0, 0, 50, 40"
-                Grid.Column="1"
-                x:Name="TipPerPersonLabel"/>
+                Grid.ColumnSpan="2"
+                Grid.RowSpan="4"
+                Source="images/check_bg.png" 
+                AbsoluteLayout.LayoutBounds="0,0,1,1"  
+                AbsoluteLayout.LayoutFlags="All"
+                HorizontalOptions="Fill"
+                VerticalOptions="Fill"
+                Aspect="Fill">
+            </Image>
+            <Label 
+            HorizontalTextAlignment="Center"
+            Grid.Row="0"
+            Margin="30, 50, 0, 0"
+            Grid.Column="0"
+            Text="Total To Pay:"/>
+            <Label 
+            HorizontalTextAlignment="Center"
+            Grid.Row="0"
+            Margin="0, 50, 50, 0"
+            Grid.Column="1"
+            x:Name="TotalToPayLabel"/>
+            <Label 
+            HorizontalTextAlignment="Center"
+            Grid.Row="1"
+            Margin="30, 0, 0, 0"
+            Grid.Column="0"
+            Text="Total Tip:"/>
+            <Label 
+            HorizontalTextAlignment="Center"
+            Grid.Row="1"
+            Margin="0, 0, 50, 0"
+            Grid.Column="1"
+            x:Name="TotalTipLabel"/>
+            <Label 
+            HorizontalTextAlignment="Center"
+            Grid.Row="2"
+            Margin="30, 0, 0, 0"
+            Grid.Column="0"
+            Text="Total Per Person:"/>
+            <Label 
+            HorizontalTextAlignment="Center"
+            Margin="0, 0, 50, 0"
+            Grid.Row="2"
+            Grid.Column="1"
+            x:Name="TotalPerPersonLabel"/>
+            <Label 
+            HorizontalTextAlignment="Center"
+            Grid.Row="3"
+            Margin="30, 0, 0, 40"
+            Grid.Column="0"
+            Text="Tip Per Person:"/>
+            <Label 
+            HorizontalTextAlignment="Center"
+            Grid.Row="3"
+            Margin="0, 0, 50, 40"
+            Grid.Column="1"
+            x:Name="TipPerPersonLabel"/>
         </Grid>
     </StackLayout>
     </ScrollView>
-</ContentPage> 
+</ContentPage>  

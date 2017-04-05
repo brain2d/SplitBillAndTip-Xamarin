@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,51 +28,58 @@ namespace SplitBillAndTip
         private void Persons_Clicked(object sender, EventArgs e)
         {
             Button clickedButton = (Button) sender;
-            clickedButton.BackgroundColor = Color.Yellow;
+            clickedButton.Style = Application.Current.Resources["PeopleButtonPressed"] as Style;
             Persons = Double.Parse(clickedButton.Text);
+            if (Application.Current.Resources == null)
+            {
+
+                DisplayAlert("Alert", "You have been alerted", "OK");
+
+            }
+
             //set Service was not very good: "+ TipPersent + "% tips";
             PersonsOutput.Text = Persons + " People Split Bill";
             switch (clickedButton.Text) //set inactive color to other buttons
             {
                 case "1":
                 {
-                    button2.BackgroundColor = Color.White;
-                    button3.BackgroundColor = Color.White;
-                    button4.BackgroundColor = Color.White;
-                    button5.BackgroundColor = Color.White;
+                        button2.Style=Application.Current.Resources["PeopleButtonNotPressed"] as Style;
+                        button3.Style=Application.Current.Resources["PeopleButtonNotPressed"] as Style;
+                        button4.Style=Application.Current.Resources["PeopleButtonNotPressed"] as Style;
+                        button5.Style=Application.Current.Resources["PeopleButtonNotPressed"] as Style;
                     break;
                 }
                 case "2":
                 {
-                    button1.BackgroundColor = Color.White;
-                    button3.BackgroundColor = Color.White;
-                    button4.BackgroundColor = Color.White;
-                    button5.BackgroundColor = Color.White;
-                    break;
+                        button1.Style = Application.Current.Resources["PeopleButtonNotPressed"] as Style;
+                        button3.Style = Application.Current.Resources["PeopleButtonNotPressed"] as Style;
+                        button4.Style = Application.Current.Resources["PeopleButtonNotPressed"] as Style;
+                        button5.Style = Application.Current.Resources["PeopleButtonNotPressed"] as Style;
+                        break;
                 }
                 case "3":
                 {
-                    button1.BackgroundColor = Color.White;
-                    button2.BackgroundColor = Color.White;
-                    button4.BackgroundColor = Color.White;
-                    button5.BackgroundColor = Color.White;
-                    break;
+                    button1.Style = Application.Current.Resources["PeopleButtonNotPressed"] as Style;
+                    button2.Style = Application.Current.Resources["PeopleButtonNotPressed"] as Style;
+                    button4.Style = Application.Current.Resources["PeopleButtonNotPressed"] as Style;
+                    button5.Style = Application.Current.Resources["PeopleButtonNotPressed"] as Style;
+                        break;
                 }
                 case "4":
                 {
-                    button1.BackgroundColor = Color.White;
-                    button2.BackgroundColor = Color.White;
-                    button3.BackgroundColor = Color.White;
-                    button5.BackgroundColor = Color.White;
-                    break;
+                    button1.Style = Application.Current.Resources["PeopleButtonNotPressed"] as Style;
+                    button2.Style = Application.Current.Resources["PeopleButtonNotPressed"] as Style;
+                    button3.Style = Application.Current.Resources["PeopleButtonNotPressed"] as Style;
+                    button5.Style = Application.Current.Resources["PeopleButtonNotPressed"] as Style;
+                        break;
                 }
                 case "5":
                 {
-                    button1.BackgroundColor = Color.White;
-                    button2.BackgroundColor = Color.White;
-                    button3.BackgroundColor = Color.White;
-                    button4.BackgroundColor = Color.White;
-                    break;
+                    button1.Style = Application.Current.Resources["PeopleButtonNotPressed"] as Style;
+                    button2.Style = Application.Current.Resources["PeopleButtonNotPressed"] as Style;
+                    button3.Style = Application.Current.Resources["PeopleButtonNotPressed"] as Style;
+                    button4.Style = Application.Current.Resources["PeopleButtonNotPressed"] as Style;
+                        break;
                 }
             };
             Button_Clicked(this,e);
